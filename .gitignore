@@ -1,0 +1,39 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# testing
+ahoy.toml
+coverage/
+/tests/cypress/videos/
+/tests/cypress/screenshots/
+# default cypress folder not used, all tests are in /tests/
+/cypress/
+
+# misc
+.DS_Store
+*.pem
+dist/
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# yarn files
+.yarn/*
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/versions/
+
+# cache
+.eslintcache
+.rollup.cache
+
+# ide
+.idea
+.vscode
+

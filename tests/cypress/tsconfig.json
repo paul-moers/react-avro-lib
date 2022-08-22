@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "declarationDir": null,
+    "emitDeclarationOnly": false,
+    "noEmit": true,
+    "types": ["cypress"]
+  },
+  "extends": "../../tsconfig.json",
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["../../node_modules"]
+}
