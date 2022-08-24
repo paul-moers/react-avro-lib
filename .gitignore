@@ -17,6 +17,9 @@ coverage/
 .DS_Store
 *.pem
 dist/
+lib
+lib-esm
+_bundles
 
 # debug
 npm-debug.log*

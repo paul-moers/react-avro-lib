@@ -63,6 +63,7 @@
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3",
+    "webpack-node-externals": "^3.0.0",
     "yup": "^1.0.0-beta.4"
   },
   "husky": {
@@ -84,11 +85,20 @@
       "npm run pre-commit"
     ]
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "_bundles/main.js",
   "name": "react-avro-lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paul-moers/react-avro-lib"
+  },
   "scripts": {
+    "clean": "rm -rf _bundles lib lib-esm types dist",
+    "bb": "npm run clean && tsc && tsc -m es6 --outDir lib-esm && webpack",
+
+    "bt": "tsc --build tsconfig.json",
+
     "build": "webpack",
+    "br": "rollup -c",
     "build-storybook": "build-storybook",
     "cypress": "cypress open",
     "cypress:ct": "cypress open --component",
@@ -104,5 +114,6 @@
     "test:coverage": "NODE_ENV=production tsc --build tests/jest/tsconfig.json && jest --env=node test --coverage",
     "type-check": "tsc --noEmit --emitDeclarationOnly false --declarationDir null"
   },
-  "version": "0.1.0"
+  "types": "./types/src/index.d.ts",
+  "version": "0.1.9"
 }

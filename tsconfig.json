@@ -13,7 +13,7 @@
     "lib": ["dom", "dom.iterable", "es2021"],
     "module": "ESNext",
     "moduleResolution": "node",
-    "outDir": "./dist/",
+    "outDir": "lib",
     "paths": {
       "src": ["src"],
       "src/*": ["src/*"]
@@ -29,6 +29,7 @@
     "node_modules",
     "src/**/*.stories.tsx",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "types/"
   ]
 }

@@ -2,11 +2,19 @@
 const path = require('path');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/index.ts',
   devtool: 'inline-source-map',
-  output: { path: path.join(__dirname, 'dist'), filename: 'bundle.js' },
+  output: {
+    path: path.resolve(__dirname, '_bundles'),
+    filename: '[name].js',
+    libraryTarget: 'umd',
+    library: 'ReactAvroLib',
+    umdNamedDefine: true,
+  },
   mode: process.env.NODE_ENV || 'development',
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -15,6 +23,11 @@ module.exports = {
         configFile: './tsconfig.json',
       }),
     ],
+  },
+  target: 'node',
+  externals: [nodeExternals()],
+  externalsPresets: {
+    node: true,
   },
   module: {
     rules: [

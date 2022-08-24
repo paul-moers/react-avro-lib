@@ -1,0 +1,9 @@
+**/tsconfig.json
+**/webpack.config.js
+.*
+lib
+lib-esm
+node_modules
+src
+stories
+tests
